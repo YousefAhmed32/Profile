@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
 import 'animate.css';
@@ -19,6 +19,7 @@ export const Contact = () => {
   };
 
   const [formDetails, setFormDetails] = useState(formInitialDetails);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const onFormUpdate = (category, value) => {
     setFormDetails({
@@ -26,6 +27,21 @@ export const Contact = () => {
       [category]: value
     });
   };
+
+  // Reset form after successful submission
+  useEffect(() => {
+    if (formState.succeeded) {
+      setShowSuccess(true);
+      setFormDetails(formInitialDetails);
+
+      // Reset Formspree success state visually after 4 seconds
+      const timer = setTimeout(() => {
+        setShowSuccess(false);
+      }, 4000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [formState.succeeded]);
 
   return (
     <section className="contact" id="connect">
@@ -136,10 +152,12 @@ export const Contact = () => {
                         />
 
                         <ValidationError prefix="Message" field="message" errors={formState.errors} />
-                        <button type="submit" disabled={formState.submitting}><span>submit</span></button>
 
+                      <button type="submit" disabled={formState.submitting}>
+                        <span>{formState.submitting ? "Sending..." : showSuccess ? "Sent!" : "Submit"}</span>
+                      </button>
 
-                        {formState.succeeded && (
+                        {showSuccess && (
                           <p className="success mt-2">Message sent successfully!</p>
                         )}
                       </Col>
@@ -154,3 +172,5 @@ export const Contact = () => {
     </section>
   );
 };
+
+
