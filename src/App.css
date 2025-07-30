@@ -177,7 +177,7 @@ span.navbar-text {
   left: 0;
   width: 0%;
   height: 100%;
-  background: linear-gradient(45deg, #0fffc1, #7e5fff, #ff57bb);
+  background: linear-gradient(45deg, #0fffc1, #3300ff, #ff57bb);
   z-index: 1;
   transition: width 0.3s ease-in-out;
   border-radius: 12px;
@@ -255,7 +255,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: absolute;
   height: 2px;
   width: 0;
-  background: linear-gradient(to right, #0fffc1, #ff57bb);
+  background: linear-gradient(to right, #868686, #ff57bb);
   transition: width 0.4s ease;
 }
 
@@ -276,7 +276,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: absolute;
   width: 2px;
   height: 0;
-  background: linear-gradient(to bottom, #0fffc1, #ff57bb);
+  background: linear-gradient(to bottom, #0fffc1, #ff0099);
   transition: height 0.4s ease;
 }
 
@@ -299,6 +299,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .spanNavbar:hover span::after {
   height: 100%;
 }
+
+
+
 @media (min-width: 1200px) {
   nav.navbar a.navbar-brand {
     width: 9%;
@@ -413,7 +416,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   max-width: 550px;
 }
 
-.banner button {
+.banner button ,.btn-cv {
   margin-top: 40px;
   padding: 12px 30px;
   border: 2px solid #ffffff;
@@ -433,7 +436,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   z-index: 1;
 }
 
-.banner button::before {
+.banner button::before  ,.btn-cv::before {
   content: "";
   position: absolute;
   width: 0;
@@ -445,7 +448,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   transition: width 0.4s ease;
 }
 
-.banner button:hover::before {
+.banner button:hover::before ,.btn-cv:hover::before {
   width: 100%;
 }
 
@@ -514,7 +517,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     padding: 8px 20px;
     font-size: 0.8rem;
   }
+  
 }
+.btn-cv{
+  text-decoration: none;
+}
+
 /************ Skills Css ************/
 .skills-section {
   padding: 80px 0;
