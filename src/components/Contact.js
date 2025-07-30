@@ -28,13 +28,13 @@ export const Contact = () => {
     });
   };
 
-  // Reset form after successful submission
+
   useEffect(() => {
     if (formState.succeeded) {
       setShowSuccess(true);
       setFormDetails(formInitialDetails);
 
-      // Reset Formspree success state visually after 4 seconds
+    
       const timer = setTimeout(() => {
         setShowSuccess(false);
       }, 4000);

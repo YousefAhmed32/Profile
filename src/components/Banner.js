@@ -11,7 +11,7 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = [ "backend developer", "frontend developer", "fullstack developer" ];
+  const toRotate = ["backend developer", "frontend developer", "fullstack developer"];
   const period = 2000;
 
   useEffect(() => {
@@ -54,22 +54,22 @@ export const Banner = () => {
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline">Welcome to my Portfolio</span>
-                <h1>{`Hi! I'm Yousef Ahmed`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
-<p>
-I'm a passionate Full Stack Developer with hands-on experience building modern web applications using the MERN stack (MongoDB, Express, React, Node.js). I love turning ideas into real, scalable solutions, and I've developed multiple projects including a complete e-commerce platform, weather apps, dashboards, and more. I'm always learning, improving, and pushing the boundaries of what I can build.
-</p>
+                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                  <span className="tagline">Welcome to my Portfolio</span>
+                  <h1>{`Hi! I'm Yousef Ahmed`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
+                  <p>
+                    I'm a passionate Full Stack Developer with hands-on experience building modern web applications using the MERN stack (MongoDB, Express, React, Node.js). I love turning ideas into real, scalable solutions, and I've developed multiple projects including a complete e-commerce platform, weather apps, dashboards, and more. I'm always learning, improving, and pushing the boundaries of what I can build.
+                  </p>
 
                   <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
-              </div>}
+                </div>}
             </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  <img src={headerImg} alt="Header Img"/>
+                  <img src={headerImg} alt="Header Img" />
                 </div>}
             </TrackVisibility>
           </Col>
